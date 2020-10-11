@@ -39,4 +39,27 @@ public class FindMax {
 			return third;
 
 	}
+
+	/**
+	 * UC3 Find maximumfrom given string input
+	 * 
+	 * @param first
+	 * @param second
+	 * @param third
+	 * @return
+	 */
+	public Integer findMaxString(String first, String second, String third) {
+
+		Integer a = Integer.parseInt(first);
+		Integer b = Integer.parseInt(second);
+		Integer c = Integer.parseInt(third);
+		if (a.compareTo(b) >= 0 && a.compareTo(b) >= 0)
+			return a;
+		else if (b.compareTo(a) >= 0 && b.compareTo(c) >= 0)
+			return b;
+		else
+			return c;
+
+	}
+
 }

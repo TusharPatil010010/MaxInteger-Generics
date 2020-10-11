@@ -52,4 +52,28 @@ class FindMaxTest {
 		Float expectedVal = 8.0f;
 		Assertions.assertEquals(expectedVal, maxNumber);	
 	}
+	
+	@Test
+	public void givenThreeStringValue_WhenFirstIsMax_ShouldReturnFirstValue() {
+		FindMax findMaxObj = new FindMax();
+		Integer maxNumber = findMaxObj.findMaxString("8", "4", "2");
+		Integer expectedVal = Integer.parseInt("8");
+		Assertions.assertEquals(expectedVal, maxNumber);	
+	}
+	
+	@Test
+	public void givenThreeStringValue_WhenSecondIsMax_ShouldReturnSecondValue() {
+		FindMax findMaxObj = new FindMax();
+		Integer maxNumber = findMaxObj.findMaxString("2", "8", "4");
+		Integer expectedVal = Integer.parseInt("8");
+		Assertions.assertEquals(expectedVal, maxNumber);	
+	}
+	
+	@Test
+	public void givenThreeStringValue_WhenThirdIsMax_ShouldReturnThirdValue() {
+		FindMax findMaxObj = new FindMax();
+		Integer maxNumber = findMaxObj.findMaxString("2", "4", "8");
+		Integer expectedVal = Integer.parseInt("8");
+		Assertions.assertEquals(expectedVal, maxNumber);	
+	}
 }
