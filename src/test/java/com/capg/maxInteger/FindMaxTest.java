@@ -28,4 +28,28 @@ class FindMaxTest {
 		Integer expectedVal = 8;
 		Assertions.assertEquals(expectedVal, maxNumber);	
 	}
+	
+	@Test
+	public void givenThreeFloatValue_WhenFirstIsMax_ShouldReturnFirstValue() {
+		FindMax findMaxObj = new FindMax();
+		Float maxNumber = findMaxObj.findMaxFloat(8.0f, 4.0f, 2.0f);
+		Float expectedVal = 8.0f;
+		Assertions.assertEquals(expectedVal, maxNumber);	
+	}
+	
+	@Test
+	public void givenThreeFloatValue_WhenSecondIsMax_ShouldReturnThirdValue() {
+		FindMax findMaxObj = new FindMax();
+		Float maxNumber = findMaxObj.findMaxFloat(2.0f, 8.0f, 4.0f);
+		Float expectedVal = 8.0f;
+		Assertions.assertEquals(expectedVal, maxNumber);	
+	}
+	
+	@Test
+	public void givenThreeFloatValue_WhenThirdIsMax_ShouldReturnThirdValue() {
+		FindMax findMaxObj = new FindMax();
+		Float maxNumber = findMaxObj.findMaxFloat(2.0f, 4.0f, 8.0f);
+		Float expectedVal = 8.0f;
+		Assertions.assertEquals(expectedVal, maxNumber);	
+	}
 }
