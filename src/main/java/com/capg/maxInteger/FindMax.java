@@ -21,6 +21,7 @@ public class FindMax<T extends Comparable<T>> {
 	 */
 	public T testMaximum() {
 		T testMaximum = testMaximum(args);
+		printMax(testMaximum);
 		return testMaximum;
 	}
 
@@ -35,5 +36,15 @@ public class FindMax<T extends Comparable<T>> {
 	private static <E extends Comparable<E>> E testMaximum(E... vars) {
 		Arrays.sort(vars);
 		return vars[vars.length - 1];
+	}
+
+	/**
+	 * UC5 print the maximum value
+	 * 
+	 * @param <A>
+	 * @param value
+	 */
+	private static <A> void printMax(A value) {
+		System.out.println("Maximum : " + value);
 	}
 }
