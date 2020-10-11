@@ -1,47 +1,39 @@
 package com.capg.maxInteger;
 
+import java.util.Arrays;
+
 public class FindMax<T extends Comparable<T>> {
 
-	T first;
-	T second;
-	T third;
+	public T[] args;
 
 	/**
-	 * Parameterized constructor
-	 * @param first
-	 * @param second
-	 * @param third
+	 * UC4 for inputs more than 3, took string of arguments
+	 * 
+	 * @param args
 	 */
-	public FindMax(T first, T second, T third) {
+	public FindMax(T... args) {
 		super();
-		this.first = first;
-		this.second = second;
-		this.third = third;
+		this.args = args;
 	}
 
 	/**
-	 * UC3 Refactored #2, calls static testMaximum
 	 * @return
 	 */
 	public T testMaximum() {
-		return testMaximum(first, second, third);
+		T testMaximum = testMaximum(args);
+		return testMaximum;
 	}
 
 	/**
+	 * UC4 using string of arguments
+	 * 
 	 * @param <E>
-	 * @param first
-	 * @param second
-	 * @param third
+	 * @param vars
 	 * @return
 	 */
-	private static <E extends Comparable<E>> E testMaximum(E first, E second, E third) {
-
-		if (first.compareTo(second) > 0 && first.compareTo(third) > 0)
-			return first;
-		else if (second.compareTo(first) > 0 && second.compareTo(third) > 0)
-			return second;
-		else
-			return third;
-
+	@SafeVarargs
+	private static <E extends Comparable<E>> E testMaximum(E... vars) {
+		Arrays.sort(vars);
+		return vars[vars.length - 1];
 	}
 }
